@@ -7,4 +7,4 @@
 - 支持关键词搜索和主题筛选
 - 信息整理时间：2026-07-20
 
-部署后访问地址将在 GitHub Pages 中提供。
+在线访问：<https://leizist.github.io/waic-2026-info/>
