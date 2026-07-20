@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="2026世界人工智能大会信息汇总，重点关注具身智能、世界模型、数字仿真与机器人物理行动。">
+  <title>WAIC 2026｜从数字世界走向物理世界</title>
+  <style>
+    :root{--ink:#161a22;--muted:#647084;--paper:#f5f6f2;--card:#fff;--line:#dfe3de;--blue:#3157ff;--cyan:#00a9b7;--orange:#ff6b35;--green:#0c8a6a;--shadow:0 10px 35px rgba(24,31,43,.08)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.65}
+    a{color:inherit}.wrap{width:min(1180px,calc(100% - 36px));margin:auto}.hero{position:relative;overflow:hidden;padding:68px 0 50px;background:#101727;color:white}.hero:before{content:"";position:absolute;inset:-35%;background:radial-gradient(circle at 25% 45%,rgba(49,87,255,.55),transparent 28%),radial-gradient(circle at 74% 30%,rgba(0,169,183,.4),transparent 25%),linear-gradient(115deg,transparent 45%,rgba(255,255,255,.04) 45% 46%,transparent 46%)}
+    .hero .wrap{position:relative}.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:#91f0e8;font-weight:700}.hero h1{font-size:clamp(38px,7vw,82px);line-height:1.04;letter-spacing:-.04em;margin:14px 0 18px;max-width:960px}.hero p{font-size:clamp(16px,2.1vw,22px);max-width:820px;color:#d9dfea;margin:0}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.pill{display:inline-flex;align-items:center;border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:7px 12px;font-size:13px;background:rgba(255,255,255,.06)}
+    nav{position:sticky;top:0;z-index:20;background:rgba(245,246,242,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}nav .wrap{display:flex;gap:20px;overflow:auto;white-space:nowrap;padding:13px 0}nav a{text-decoration:none;font-size:14px;color:#485267}nav a:hover{color:var(--blue)}
+    section{padding:54px 0}.section-head{display:grid;grid-template-columns:1fr minmax(260px,520px);gap:30px;align-items:end;margin-bottom:24px}.kicker{font-size:12px;letter-spacing:.16em;color:var(--blue);font-weight:800}.section-head h2{font-size:clamp(28px,4vw,48px);line-height:1.15;margin:6px 0 0;letter-spacing:-.025em}.section-head p{margin:0;color:var(--muted)}
+    .facts{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.fact{background:var(--card);border:1px solid var(--line);padding:20px;border-radius:18px}.fact b{display:block;font-size:30px;line-height:1.1;color:var(--blue)}.fact span{font-size:13px;color:var(--muted)}
+    .chains{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.chain{position:relative;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px;min-height:260px;box-shadow:var(--shadow)}.chain .n{font:700 12px/1 ui-monospace,monospace;color:var(--blue)}.chain h3{font-size:23px;line-height:1.2;margin:50px 0 10px}.chain p{font-size:14px;color:var(--muted);margin:0}.chain:after{content:"→";position:absolute;right:18px;top:14px;font-size:28px;color:#adb6c7}.chain:last-child:after{content:"↻"}.chain:nth-child(2) .n{color:var(--cyan)}.chain:nth-child(3) .n{color:var(--orange)}.chain:nth-child(4) .n{color:var(--green)}
+    .signal{background:#161e31;color:#fff;border-radius:28px;padding:30px;display:grid;grid-template-columns:1.2fr 1fr;gap:36px}.signal h3{font-size:30px;line-height:1.2;margin:0 0 14px}.signal p{color:#cdd5e2;margin:0}.signal ul{margin:0;padding-left:20px}.signal li{margin:8px 0;color:#e6eaf0}
+    .hubs{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.hub{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;text-decoration:none;transition:.2s}.hub:hover{transform:translateY(-3px);border-color:var(--blue);box-shadow:var(--shadow)}.hub b{display:block;margin-bottom:5px}.hub span{font-size:12px;color:var(--muted)}
+    .controls{display:grid;grid-template-columns:1fr auto;gap:12px;margin:24px 0 18px}.search{width:100%;border:1px solid var(--line);background:white;border-radius:14px;padding:13px 16px;font:inherit;outline:none}.search:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(49,87,255,.1)}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:white;border-radius:100px;padding:9px 13px;cursor:pointer;color:#475267}.filter.active{background:var(--ink);border-color:var(--ink);color:white}
+    .index-meta{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:10px}.articles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.article{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:17px 18px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:start}.article.hidden{display:none}.article a{font-size:16px;font-weight:700;line-height:1.42;text-decoration:none}.article a:hover{color:var(--blue);text-decoration:underline}.article p{grid-column:1/-1;margin:0;color:var(--muted);font-size:13px}.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}.tag{font-size:11px;color:#536077;background:#edf0f5;border-radius:100px;padding:3px 8px}.tag.hot{color:#a33316;background:#fff0e9}.src{font-size:11px;color:var(--blue);white-space:nowrap;padding-top:3px}.empty{display:none;text-align:center;padding:50px;color:var(--muted)}
+    .note{border-left:4px solid var(--orange);background:#fff6f0;padding:18px 20px;border-radius:0 14px 14px 0;color:#594b45}.footer{padding:34px 0 50px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+    @media(max-width:900px){.facts{grid-template-columns:repeat(2,1fr)}.chains{grid-template-columns:repeat(2,1fr)}.hubs{grid-template-columns:repeat(2,1fr)}.signal{grid-template-columns:1fr}.articles{grid-template-columns:1fr}.section-head{grid-template-columns:1fr}.controls{grid-template-columns:1fr}}
+    @media(max-width:560px){.hero{padding-top:48px}.facts,.chains,.hubs{grid-template-columns:1fr}.chain{min-height:210px}.article{grid-template-columns:1fr}.src{grid-row:1}.filters{overflow:auto;flex-wrap:nowrap;padding-bottom:4px}.wrap{width:min(100% - 24px,1180px)}}
+    @media print{nav,.controls{display:none}.hero{padding:30px 0;background:#fff;color:#000}.hero:before{display:none}.hero p,.eyebrow{color:#444}.pill{border-color:#aaa}.article,.chain,.fact{break-inside:avoid;box-shadow:none}section{padding:25px 0}.articles{grid-template-columns:1fr}.footer{padding-bottom:0}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="eyebrow">WAIC 2026 · Information Atlas</div>
+      <h1>从数字世界<br>走向物理世界</h1>
+      <p>2026世界人工智能大会信息汇总：重点追踪具身智能、世界模型、数字仿真，以及机器人如何在真实环境中感知、决策与行动。</p>
+      <div class="meta"><span class="pill">2026.07.17—07.20</span><span class="pill">中国 · 上海</span><span class="pill">主题：智能伙伴 共创未来</span><span class="pill">118条独立内容链接</span><span class="pill">整理更新：2026.07.20</span></div>
+    </div>
+  </header>
+  <nav><div class="wrap"><a href="#overview">大会概览</a><a href="#focus">重点技术链</a><a href="#signals">核心观察</a><a href="#sources">专题入口</a><a href="#index">全部内容索引</a><a href="#notes">说明</a></div></nav>
+
+  <main>
+    <section id="overview"><div class="wrap">
+      <div class="section-head"><div><div class="kicker">01 / OVERVIEW</div><h2>大会规模与结构</h2></div><p>综合大会官方、新华网、澎湃新闻和新浪专题公开信息。数字会随大会更新，以下为截至 7 月 20 日采集口径。</p></div>
+      <div class="facts"><div class="fact"><b>10万㎡+</b><span>展览面积</span></div><div class="fact"><b>1100+</b><span>参展企业</span></div><div class="fact"><b>3000+</b><span>前沿展品</span></div><div class="fact"><b>300+</b><span>全球首发产品</span></div><div class="fact"><b>200+</b><span>具身智能相关企业</span></div></div>
+    </div></section>
+
+    <section id="focus"><div class="wrap">
+      <div class="section-head"><div><div class="kicker">02 / PHYSICAL AI</div><h2>值得连续追踪的四段技术链</h2></div><p>具身智能不是单一机器人产品，而是从理解世界、生成训练经验，到真机闭环执行与规模部署的一整套系统工程。</p></div>
+      <div class="chains">
+        <article class="chain"><div class="n">01 · WORLD MODEL</div><h3>世界模型<br>理解物理规律</h3><p>从“识别画面”升级为预测状态变化、因果关系与行动后果，为机器人规划和泛化提供内部环境模型。</p></article>
+        <article class="chain"><div class="n">02 · SIMULATION</div><h3>数字仿真<br>生成训练经验</h3><p>利用数字孪生、物理引擎、合成数据与强化学习，在可控环境中低成本训练、验证并覆盖危险或稀有场景。</p></article>
+        <article class="chain"><div class="n">03 · ACTION</div><h3>物理行动<br>形成任务闭环</h3><p>融合视觉、语言、触觉、空间语义与运动控制，让机器人在工厂、药房、家庭等真实环境完成长序列任务。</p></article>
+        <article class="chain"><div class="n">04 · FEEDBACK</div><h3>真实反馈<br>持续学习进化</h3><p>将真机数据、失败案例、观察和奖励回流模型；行业由“炫技”转向稳定性、泛化能力、成本与可部署性。</p></article>
+      </div>
+    </div></section>
+
+    <section id="signals"><div class="wrap">
+      <div class="signal"><div><h3>本届 WAIC 的关键信号：从“能说”转向“会干”</h3><p>新华专题概括出“具身、兴业、善治”三条主线。具身方向的评价尺度已经改变：不再只看动作演示，而是看机器人能否理解环境、跨任务泛化、长时间稳定工作，并产生真实产业价值。</p></div><ul><li>模型：参数竞赛弱化，智能体、自主执行与经验学习成为中心。</li><li>数据：真实世界高质量数据、合成数据和仿真训练形成组合。</li><li>本体：人形机器人之外，工业机械臂、药房机器人、特种巡检与终端设备共同构成物理 AI。</li><li>落地：汽车制造、物流分拣、药房夜班、居家陪护等成为高频场景。</li><li>产业：关注规模化部署、稳定率、成本、供应链和安全治理。</li></ul></div>
+    </div></section>
+
+    <section id="sources"><div class="wrap">
+      <div class="section-head"><div><div class="kicker">03 / SOURCE HUBS</div><h2>五个专题入口</h2></div><p>点击卡片进入原专题。腾讯、澎湃部分列表为动态加载，本页另通过公开搜索索引补充了可直达文章。</p></div>
+      <div class="hubs">
+        <a class="hub" href="https://worldaic.com.cn/" target="_blank" rel="noopener"><b>WAIC 官方</b><span>大会信息、论坛与展览入口 ↗</span></a>
+        <a class="hub" href="https://finance.sina.cn/zt_d/subject-1782718283?from=wap" target="_blank" rel="noopener"><b>新浪财经专题</b><span>新闻、议程、探展、观察 ↗</span></a>
+        <a class="hub" href="https://news.qq.com/rain/a/UTR2026071318753600" target="_blank" rel="noopener"><b>腾讯新闻专题</b><span>大会聚合专题页 ↗</span></a>
+        <a class="hub" href="https://www.news.cn/zt/waic2026/index.html" target="_blank" rel="noopener"><b>新华网专题</b><span>政策、观察、视频与影像 ↗</span></a>
+        <a class="hub" href="https://www.thepaper.cn/newsDetail_forward_166622" target="_blank" rel="noopener"><b>澎湃新闻专题</b><span>最新、前瞻、发布、深观察 ↗</span></a>
+      </div>
+    </div></section>
+
+    <section id="index"><div class="wrap">
+      <div class="section-head"><div><div class="kicker">04 / LINKED INDEX</div><h2>可检索的内容索引</h2></div><p>标题均可点击跳转原文。优先收录大会整体趋势、政策治理、具身智能、世界模型、机器人、智能体与产业落地内容。</p></div>
+      <div class="controls"><input id="search" class="search" type="search" placeholder="搜索标题、摘要或关键词，如：世界模型 / 仿真 / 药房 / 工业"><div class="filters" id="filters"><button class="filter active" data-filter="all">全部</button><button class="filter" data-filter="具身智能">具身智能</button><button class="filter" data-filter="世界模型">世界模型</button><button class="filter" data-filter="仿真">数字仿真</button><button class="filter" data-filter="机器人">机器人</button><button class="filter" data-filter="智能体">智能体</button><button class="filter" data-filter="产业">产业落地</button><button class="filter" data-filter="治理">治理</button><button class="filter" data-filter="大会要闻">大会要闻</button><button class="filter" data-filter="影像">影像视频</button></div></div>
+      <div class="index-meta"><span id="count"></span><span>点击标题打开原文 ↗</span></div>
+      <div class="articles" id="articles"></div><div class="empty" id="empty">没有匹配条目，请换一个关键词。</div>
+    </div></section>
+
+    <section id="notes"><div class="wrap"><div class="note"><b>整理边界：</b>本页是公开信息的导航式摘要，不复制媒体全文；部分文章标题和数据可能在会后继续更新。条目摘要为基于公开标题、专题导语和可访问正文的编辑性概括，涉及企业性能、出货量或预测数字时，建议进入原文核验其统计口径。</div></div></section>
+  </main>
+  <footer class="footer"><div class="wrap">WAIC 2026 公开信息整理 · 单文件网页，无外部脚本与字体依赖，可直接转发、部署或打印为 PDF。</div></footer>
+
+  <script>
+  const items = [
+    {t:'世界人工智能大会勾勒三大发展主线',u:'https://www.news.cn/fortune/20260720/aebc6e7080b34f66a22190bebf472534/c.html',s:'新华网',d:'以“具身、兴业、善治”概括大会全景，重点说明 AI 从数字世界走向物理世界。',g:['具身智能','产业','治理','重点']},
+    {t:'新华网科技观察｜物理AI：从WAIC展台，奔赴真实产业“战场”',u:'https://www.news.cn/20260720/b4a37b350365492697705718eec524f0/c.html',s:'新华网',d:'聚焦物理 AI 从展台演示进入真实产业环境的路径。',g:['具身智能','机器人','产业','重点']},
+    {t:'新华网科技观察｜从一场大会看AI产业发展新方向',u:'https://www.news.cn/tech/20260719/e6d801e02f1341309006fd6177da8bcb/c.html',s:'新华网',d:'智能体成为主角，200多家具身企业同台，真实场景闭环与规模商用是核心趋势。',g:['具身智能','智能体','产业','重点']},
+    {t:'人工智能加速走进现实这一年：哪些竞争格局正在被改写',u:'https://www.thepaper.cn/newsDetail_forward_33574809',s:'澎湃新闻',d:'系统讨论世界模型、真机数据、机器人基础模型，以及从“身体”到“大脑”的系统竞争。',g:['世界模型','具身智能','机器人','仿真','重点']},
+    {t:'Spatial Interaction for Embodied Intelligence｜具身智能空间交互研讨会',u:'https://waica2026.worldaic.com.cn/program/workshop-program/spatial-interaction-embodied-intelligence/',s:'WAIC Academic',d:'含“面向规模化落地应用的具身世界模型”等议题，连接空间交互、物理通用智能与产业落地。',g:['世界模型','具身智能','仿真','重点']},
+    {t:'WAIC 2026探展｜具身智能：从“能运动”到“能干活”，产业化拐点已至',u:'https://finance.sina.cn/stock/jdts/2026-07-18/detail-iniierwm8342341.d.html',s:'新浪财经',d:'观察具身智能由运动展示走向真实任务、产品化与规模部署。',g:['具身智能','机器人','产业','重点']},
+    {t:'未来AI城市什么样？机器人掌握了哪些新技能？这里有“样板间”',u:'https://www.thepaper.cn/newsDetail_forward_33600947',s:'澎湃新闻',d:'208款具身智能终端、超300台真机集中亮相，呈现进家庭、进工厂、进城市的场景。',g:['具身智能','机器人','产业','重点']},
+    {t:'2026世界人工智能大会十大镇馆之宝公布，亮点速览',u:'https://www.thepaper.cn/newsDetail_forward_33588405',s:'澎湃新闻',d:'涵盖国产十万卡集群、工业仿真和跨本体具身大模型机器人智慧药房。',g:['具身智能','机器人','仿真','产业','重点']},
+    {t:'WAIC新观察｜两年370多家具身企业入局：“新势力”登场，个个都有绝活',u:'https://finance.sina.cn/2026-07-18/detail-iniierwh3994190.d.html',s:'新浪财经',d:'从企业数量、技术路线和产业生态观察具身智能赛道变化。',g:['具身智能','机器人','产业']},
+    {t:'WAIC 2026观察｜能切菜、打乒乓球、做实验、组装电池，这届机器人可太能干了',u:'https://finance.sina.cn/stock/jdts/2026-07-18/detail-iniierwk1622223.d.html',s:'新浪财经',d:'通过多种物理任务呈现机器人操作能力和场景闭环。',g:['具身智能','机器人','产业']},
+    {t:'从WAIC舞台三年跃迁透视产业未来图景：从“概念秀”走向“真干活”',u:'https://finance.sina.cn/2026-07-18/detail-iniierwh3948260.d.html',s:'新浪财经',d:'对比三年演进，关注具身系统实际执行、交付和商业化。',g:['具身智能','机器人','产业']},
+    {t:'WAIC，我们看到这六个趋势',u:'https://www.thepaper.cn/newsDetail_forward_33611418',s:'澎湃新闻',d:'大模型不再只比规模，机器人从表演转向工厂、仓库和家庭任务。',g:['具身智能','机器人','智能体','产业']},
+    {t:'WAIC 2026：告别参数竞赛，AI全链路商业化',u:'https://www.thepaper.cn/newsDetail_forward_33605521',s:'澎湃新闻',d:'从算力、操作系统、终端到机器人，梳理任务执行、智能中枢与世界认知三类技术路线。',g:['世界模型','具身智能','智能体','产业']},
+    {t:'直击WAIC｜腾讯发布多款具身智能基座模型与智能体',u:'https://finance.sina.cn/hy/2026-07-19/detail-iniiimtc7924002.d.html',s:'新浪财经',d:'腾讯具身智能基座模型与智能体产品发布信息。',g:['具身智能','智能体','机器人']},
+    {t:'智启具身｜物理AI要实现规模化，必须突破三道“墙”',u:'https://finance.sina.cn/hy/2026-07-19/detail-iniihzcp0416626.d.html',s:'新浪财经',d:'讨论物理 AI 规模化所面对的模型、数据与工程障碍。',g:['具身智能','机器人','产业']},
+    {t:'模型决定物理AI智能涌现的起点，数据定义终局',u:'https://finance.sina.cn/hy/2026-07-19/detail-iniihzch1200402.d.html',s:'新浪财经',d:'强调模型能力与真实世界数据在物理 AI 进化中的互补关系。',g:['具身智能','世界模型','机器人','产业']},
+    {t:'直击WAIC｜智平方类脑大模型亮相，让机器人越来越会“干活”',u:'https://finance.sina.cn/hy/2026-07-18/detail-iniifpac4200458.d.html',s:'新浪财经',d:'类脑大模型面向机器人任务执行与真实场景应用。',g:['具身智能','机器人','产业']},
+    {t:'智平方类脑大模型及通用机器人亮相，已落地半导体制造与零售场景',u:'https://finance.sina.cn/stock/jdts/2026-07-17/detail-iniianxm8169292.d.html',s:'新浪财经',d:'具身模型与机器人在制造、零售中的落地案例。',g:['具身智能','机器人','产业']},
+    {t:'从产线到居家，2026 WAIC机器人场景拉满，国产零部件撑起底气',u:'https://finance.sina.cn/stock/jdts/2026-07-16/detail-inihzmmu4429475.d.html',s:'新浪财经',d:'覆盖制造和家庭场景，并关注国产机器人零部件供应链。',g:['机器人','具身智能','产业']},
+    {t:'直击WAIC｜梅卡曼德机器人现身，展示多个工业落地场景',u:'https://finance.sina.cn/hy/2026-07-19/detail-iniiirzc3493904.d.html',s:'新浪财经',d:'工业机器人视觉、操作与现场落地。',g:['机器人','具身智能','产业']},
+    {t:'直击WAIC｜机器人做家务不是“梦”？擎朗现场模拟叠洗衣服',u:'https://finance.sina.cn/hy/2026-07-19/detail-iniiimta1204351.d.html',s:'新浪财经',d:'家庭服务机器人对柔性物体操作任务的现场演示。',g:['机器人','具身智能','产业']},
+    {t:'直击WAIC｜看遍三百台机器人：10万元内机型全实测，家用短板一次说透',u:'https://finance.sina.cn/hy/2026-07-19/detail-iniihzcm3579155.d.html',s:'新浪财经',d:'从价格、功能与短板观察家用机器人商业化成熟度。',g:['机器人','具身智能','产业']},
+    {t:'灵初智能CEO王启斌：AI最缺的是高质量的真实世界人类数据',u:'https://finance.sina.cn/hy/2026-07-17/detail-iniiaxpe1416903.d.html',s:'新浪财经',d:'真实世界数据是具身模型学习、泛化和闭环改进的关键瓶颈。',g:['具身智能','世界模型','机器人','仿真']},
+    {t:'苏昊WAIC主论坛演讲：“物理智能的使命，是把人还给人”',u:'https://finance.sina.cn/2026-07-17/detail-iniiccuw7420972.d.html',s:'新浪财经',d:'从主论坛讨论物理智能的价值目标与实际应用。',g:['具身智能','机器人']},
+    {t:'阶跃星辰印奇：当智能体走进物理世界',u:'https://finance.sina.cn/2026-07-17/detail-iniiaxpe1471459.d.html',s:'新浪财经',d:'智能体与下一代终端结合，成为感知、决策和执行任务的单元。',g:['智能体','具身智能','机器人']},
+    {t:'当智能体走进物理世界，每个人的可能都将十倍放大',u:'https://finance.sina.cn/2026-07-17/detail-iniiaxpa4198682.d.html',s:'新浪财经',d:'智能体由屏幕走向物理环境的主论坛观点。',g:['智能体','具身智能']},
+    {t:'2026年世界人工智能大会视觉观察：“通用具身智能”成展会热点',u:'https://www.news.cn/photo/20260719/c02bce9d3b5a4c408d71da2cea6b2e8e/c.html',s:'新华网',d:'以影像呈现通用具身智能与机器人展台。',g:['具身智能','机器人']},
+    {t:'2026世界人工智能大会机器人亮点纷呈',u:'https://www.news.cn/photo/20260718/0e1550682c864824bbda0ab73cdb09f9/c.html',s:'新华网',d:'大会机器人展品与互动场景影像集。',g:['机器人','具身智能']},
+    {t:'具身炫技、智算升级：WAIC上的AI更聪明了',u:'https://www.news.cn/tech/20260719/fe02ce42456340eebfd43234015d33bd/c.html',s:'新华网',d:'视频观察具身能力与智算基础设施升级。',g:['具身智能','机器人','产业']},
+    {t:'直击上海WAIC展馆，智能机器人各显神通',u:'https://www.news.cn/tech/20260719/e1b9a072d6f44ca9b44394231ef07f2c/c.html',s:'新华网',d:'现场视频汇集多类智能机器人。',g:['机器人','具身智能']},
+    {t:'15个小时，八万块积木：机器人组团上岗“搭长城”',u:'https://www.news.cn/tech/20260719/a058a9d4a127453594003818a0e8f194/c.html',s:'新华网',d:'多机器人长时间协同任务，观察稳定性和协作闭环。',g:['机器人','具身智能','产业']},
+    {t:'买药最快90秒，线下药房迎来机器人员工',u:'https://www.news.cn/tech/20260719/3180949d70c342ab92a8ed3a4663e354/c.html',s:'新华网',d:'机器人智慧药房展示取送药任务与服务场景。',g:['机器人','具身智能','产业']},
+    {t:'零改造嵌入，机器人进药房“值夜班”',u:'https://www.news.cn/local/20260719/2cf4cb45e4b34b0f975ea592c2cab6cc/c.html',s:'新华网',d:'强调在既有药房环境中的低改造部署与夜间运营。',g:['机器人','具身智能','产业']},
+    {t:'机器人也会变魔术？跟真人比比指尖功夫',u:'https://www.news.cn/tech/20260719/57410ab4381e4293b35dd741f62079c5/c.html',s:'新华网',d:'从精细操作观察灵巧手和运动控制能力。',g:['机器人','具身智能']},
+    {t:'看球不止能看世界杯，WAIC上机器人靠点球出圈',u:'https://www.news.cn/tech/20260719/597c4e70c49b45abb81fce70f5da9b0b/c.html',s:'新华网',d:'机器人运动、感知和控制的互动展示。',g:['机器人','具身智能']},
+    {t:'民俗舞遇上具身智能，擎朗机器人激情演绎陕北腰鼓',u:'https://www.news.cn/tech/20260719/f0124acbda8f43489491e95ce8a4d692/c.html',s:'新华网',d:'机器人群体动作与文化表演场景。',g:['机器人','具身智能']},
+    {t:'地瓜机器人旭日S600获20+头部客户认可，已开启量产验证',u:'https://finance.sina.cn/tech/2026-07-16/detail-inihycsn1229046.d.html',s:'新浪财经',d:'机器人计算平台进入量产验证阶段。',g:['机器人','具身智能','产业']},
+    {t:'智元机器人成国风穿搭茶艺师，老手分寸精准拿捏',u:'https://finance.sina.cn/hy/2026-07-16/detail-inihyywa1354294.d.html',s:'新浪财经',d:'机器人精细操作与服务任务演示。',g:['机器人','具身智能']},
+    {t:'WAIC最疯狂挑战：6个机器人，8万积木拼长城',u:'https://finance.sina.cn/2026-07-17/detail-iniiahrk4229974.d.html',s:'新浪财经',d:'多机协同、长时运行和复杂任务分解的现场挑战。',g:['机器人','具身智能','产业']},
+    {t:'WAIC 2026首日探展：十大“镇馆之宝”勾勒产业新坐标',u:'https://finance.sina.cn/2026-07-17/detail-iniickaw4125522.d.html',s:'新浪财经',d:'从国产算力、智能体手机到机器人协同任务，浏览首日代表性成果。',g:['机器人','智能体','产业']},
+    {t:'2026世界人工智能大会最高荣誉SAIL奖揭晓',u:'https://www.thepaper.cn/newsDetail_forward_33609542',s:'澎湃新闻',d:'公布SAIL奖与SAIL之星项目，覆盖超节点、群体智能等方向。',g:['产业','机器人','智能体']},
+    {t:'首届世界人工智能大会·学术正式亮相',u:'https://www.thepaper.cn/newsDetail_forward_33611407',s:'澎湃新闻',d:'WAIC Academic首届会议、论文录用与评审机制信息。',g:['产业','治理']},
+    {t:'两本AI学术新刊首刊在WAIC发布，打造国际学术交流平台',u:'https://www.thepaper.cn/newsDetail_forward_33615223',s:'澎湃新闻',d:'聚焦科学智能与工程智能化的学术交流平台。',g:['产业']},
+    {t:'全球首款AI智能体手机将在2026世界人工智能大会首发首秀',u:'https://www.thepaper.cn/newsDetail_forward_33532226',s:'澎湃新闻',d:'大会前瞻：世界模型、具身智能、AI Infra、AI4S、开源智能体和Token经济等方向。',g:['世界模型','具身智能','智能体','产业']},
+    {t:'WAIC现场观察：高通全栈技术底座助力开启智能体之年',u:'https://www.thepaper.cn/newsDetail_forward_33613484',s:'澎湃新闻',d:'端侧算力、感知与连接如何支撑从被动响应到主动服务。',g:['智能体','具身智能','产业']},
+    {t:'探营2026WAIC：走进上海“含AI量”最高的地方',u:'https://www.thepaper.cn/newsDetail_forward_33582109',s:'澎湃新闻',d:'会前探馆，概览三地四馆、企业、展品和首发产品。',g:['产业','机器人']},
+    {t:'WAIC 2026启幕倒计时：四大亮点一文看懂',u:'https://finance.sina.cn/2026-07-13/detail-inihrxcc2211308.d.html',s:'新浪财经',d:'概览大模型、智能体系统、3D芯片、人形机器人、灵巧手和City Walk。',g:['具身智能','机器人','智能体','产业']},
+    {t:'WAIC首日探展：从国产算力到机器人落地，一文全览AI产业链创新突破',u:'https://finance.sina.cn/tech/2026-07-17/detail-iniickaw4125522.d.html',s:'新浪财经',d:'覆盖模型、智能体操作系统、终端与机器人协同任务。',g:['机器人','智能体','产业']},
+    {t:'WAIC：智能体站上C位，产业链布局提速',u:'https://www.news.cn/20260717/f716ca2e7c5241e0a7207bbdbea72e94/c.html',s:'新华网',d:'智能体从“能干活、会思考、创价值”切入行业应用。',g:['智能体','产业']},
+    {t:'2026WAIC观察：从“能说”迈向“会干”，AI进化为全民通用生产力工具',u:'https://finance.sina.cn/2026-07-18/detail-iniifhty3860275.d.html',s:'新浪财经',d:'关注大模型与智能体从问答工具走向任务执行。',g:['智能体','产业']},
+    {t:'直击WAIC｜腾讯副总裁：真实场景永远是AI价值的第一现场',u:'https://finance.sina.cn/2026-07-18/detail-iniierwk1594720.d.html',s:'新浪财经',d:'强调工程能力、业务知识与真实场景对AI价值的决定作用。',g:['智能体','产业']},
+    {t:'直击WAIC｜真人、数字人分不清？虎牙VAM1.0多模态数字人亮相',u:'https://finance.sina.cn/hy/2026-07-18/detail-iniiewea7164844.d.html',s:'新浪财经',d:'多模态数字人与虚拟内容生成展示。',g:['仿真','产业']},
+    {t:'2026世界人工智能大会藏着这些消费新趋势',u:'https://finance.sina.cn/2026-07-18/detail-iniifana3889349.d.html',s:'新浪财经',d:'从终端、服务和体验观察AI消费应用。',g:['智能体','产业']},
+    {t:'探展WAIC 2026｜从“算力淘金”到“AI工厂”',u:'https://finance.sina.cn/tech/2026-07-16/detail-inihyqha7732248.d.html',s:'新浪财经',d:'AI基础设施与Physical AI行业应用的规模化生产路径。',g:['具身智能','产业']},
+    {t:'中信证券：聚焦算力芯片、超节点、AI应用等方向',u:'https://finance.sina.cn/2026-07-15/detail-inihvumk8089496.d.html',s:'新浪财经',d:'大会前瞻，智能计算与具身智能两大赛道均汇聚200余家企业。',g:['具身智能','产业']},
+    {t:'2026世界人工智能大会倒计时30天：全球首发超300款AI新品',u:'https://finance.sina.cn/stock/jdts/2026-06-18/detail-inicuupv6505085.d.html',s:'新浪财经',d:'会前发布会与WAIC Academic信息。',g:['产业']},
+    {t:'2026世界人工智能大会将于7月17日至20日在沪举行，3000余项展品将亮相',u:'https://finance.sina.cn/stock/jdts/2026-06-18/detail-inicuqhf2340449.d.html',s:'新浪财经',d:'大会时间、规模、平台和生态概览。',g:['产业']},
+    {t:'2026世界人工智能大会见证中国AI产业突破',u:'https://www.news.cn/20260719/30dafc4293a5471c83a3aa1c681a42c3/c.html',s:'新华网',d:'从算法、算力到产学研协同创新的综合报道。',g:['产业']},
+    {t:'《人工智能合作发展行动计划》发布',u:'https://finance.sina.cn/2026-07-17/detail-iniiatfa7439351.d.html',s:'新华社 / 新浪',d:'大会重要政策成果，面向人工智能国际合作与发展。',g:['治理','产业']},
+    {t:'《国际人工智能伦理治理行动计划》发布',u:'https://finance.sina.cn/2026-07-17/detail-iniiaxpf8131904.d.html',s:'央视 / 新浪',d:'大会治理成果，关注伦理、安全、包容与全球协同。',g:['治理']},
+    {t:'WAIC观察：从原则倡导迈向制度化实施，中国AI治理标准“硬核”落地',u:'https://finance.sina.cn/stock/jdts/2026-07-18/detail-iniierwk1622131.d.html',s:'新浪财经',d:'观察中国AI治理由原则向制度与标准实施推进。',g:['治理']},
+    {t:'直面AI治理挑战，中国引领全球协同共治',u:'https://www.news.cn/tech/20260720/6646f7f92e4e4b49a7d9ffd92557ddf9/c.html',s:'新华网',d:'聚焦国际人工智能治理挑战与协作框架。',g:['治理']},
+    {t:'强化风险意识，确保安全可控',u:'https://www.news.cn/20260719/b806e84648be42f593a7423215c01684/c.html',s:'新华网',d:'围绕技术伦理、数据安全和监管体系的治理述评。',g:['治理']},
+    {t:'习近平出席2026世界人工智能大会暨人工智能全球治理高级别会议开幕式并发表主旨讲话',u:'https://www.news.cn/politics/leaders/20260717/a40efe09846f418ca42ba096d7d6efd7/c.html',s:'新华网',d:'大会开幕式、全球人工智能治理四点意见及支持全球人工智能发展的举措。',g:['大会要闻','治理']},
+    {t:'习近平在2026世界人工智能大会暨人工智能全球治理高级别会议开幕式上的主旨讲话（全文）',u:'https://www.news.cn/politics/leaders/20260717/72728b6f94154d63b3eaaaf9808b51eb/c.html',s:'新华网',d:'《携手构建公正合理的全球人工智能治理体系》全文。',g:['大会要闻','治理']},
+    {t:'习近平主席纵论全球人工智能治理体系，金句来了',u:'https://www.news.cn/politics/leaders/20260717/94f05da1ccd74abbbfa9b07f94737e00/c.html',s:'新华网',d:'主旨讲话核心观点的图解式摘编。',g:['大会要闻','治理']},
+    {t:'习近平主席出席大会开幕式并发表主旨讲话侧记',u:'https://www.news.cn/politics/leaders/20260718/6338b22fed024beca70956416430c817/c.html',s:'新华网',d:'大会开幕式现场侧记与全球治理议题背景。',g:['大会要闻','治理']},
+    {t:'促进共同繁荣 维护共同安全——重要讲话引发与会人士热烈反响',u:'https://www.news.cn/20260718/da8a980a5eb44ad1ba7291a2b412fe06/c.html',s:'新华网',d:'汇总与会人士对人工智能发展、安全和普惠议题的回应。',g:['大会要闻','治理']},
+    {t:'习近平主席引领人工智能发展“以人为本、向上向善”',u:'https://www.news.cn/politics/leaders/20260718/158854141c0d45f1ab9f208cc5a11a41/c.html',s:'新华网',d:'梳理以人为本、向上向善的人工智能发展理念。',g:['治理']},
+    {t:'携手推动人工智能向上向善造福人类',u:'https://www.news.cn/20260718/dac2c37da68b410cb627b6e7d37aae4c/c.html',s:'新华网',d:'人工智能全球治理与中国方案综合报道。',g:['治理']},
+    {t:'2026世界人工智能大会暨人工智能全球治理高级别会议主席声明（全文）',u:'https://www.news.cn/20260717/3310820b96f949979ce6406712094935/c.html',s:'新华网',d:'大会主席声明全文，涉及发展、安全、伦理、标准与国际合作。',g:['大会要闻','治理']},
+    {t:'习近平会见联合国秘书长古特雷斯',u:'https://www.news.cn/20260717/195ee950462143eb838b33608d0ebfa2/c.html',s:'新华网',d:'大会期间围绕多边主义与人工智能全球治理的会见。',g:['大会要闻','治理']},
+    {t:'习近平会见柬埔寨首相洪玛奈',u:'https://www.news.cn/politics/leaders/20260717/ac5edb284e81403dbf106a9a67371cd0/c.html',s:'新华网',d:'大会期间双边会见信息。',g:['大会要闻']},
+    {t:'习近平会见泰国总理阿努廷',u:'https://www.news.cn/politics/leaders/20260717/c5803f8418d64dc8b548117645cfb134/c.html',s:'新华网',d:'大会期间双边会见信息。',g:['大会要闻']},
+    {t:'习近平会见哈萨克斯坦总统托卡耶夫',u:'https://www.news.cn/politics/leaders/20260716/f5edc05ecec44058aa432596e46f26dc/c.html',s:'新华网',d:'大会前夕双边会见信息。',g:['大会要闻']},
+    {t:'金色相框｜携手构建公正合理的全球人工智能治理体系',u:'https://www.news.cn/politics/leaders/20260718/1b3fe5199e32496f9b0219d4d9dc6913/c.html',s:'新华网',d:'大会重要现场影像与治理主题。',g:['大会要闻','治理','影像']},
+    {t:'第一观察｜从千里马之喻看人工智能发展与治理的辩证之道',u:'https://www.news.cn/politics/leaders/20260717/c028d5dec8564a3c9d30f23499821892/c.html',s:'新华网',d:'从发展与安全关系解读人工智能治理。',g:['治理']},
+    {t:'把握应对人工智能机遇挑战 共创人类社会更加美好未来',u:'https://www.news.cn/politics/leaders/20260718/17cd720ba14a420ab71095624706d771/c.html',s:'新华网',d:'评论人工智能发展机遇、风险与全球协同。',g:['治理']},
+    {t:'近镜头｜共奏人工智能发展全球合作的交响',u:'https://www.news.cn/politics/leaders/20260718/2eaeac5c52254485bf9c7bfcfaf68f75/c.html',s:'新华网',d:'大会全球合作议题的现场观察。',g:['大会要闻','治理']},
+    {t:'学习快评｜让人工智能这匹千里马既跑得快又跑得稳',u:'https://www.news.cn/politics/leaders/20260717/b15ed3c3d3024ee580a37f6351e669f1/c.html',s:'新华网',d:'强调统筹创新发展与安全治理。',g:['治理']},
+    {t:'2026世界人工智能大会观察',u:'https://www.news.cn/20260720/ae3e51341638440a9837d9c9434fec04/c.html',s:'新华网',d:'大会闭幕日综合观察，覆盖技术、产业与治理进展。',g:['大会要闻','产业','治理']},
+    {t:'服务业AI认知测评与学习辅导系统发布',u:'https://www.news.cn/20260720/f26500dba9b14ca39e83f80064fd87b0/c.html',s:'新华网',d:'服务业人工智能认知测评与人才学习应用。',g:['产业']},
+    {t:'2026世界人工智能大会助力企业协同共创',u:'https://www.news.cn/20260719/54216ade0abf41c88b787368a3391090/c.html',s:'新华网',d:'大会供需对接、产业合作与企业生态。',g:['产业']},
+    {t:'世界人工智能合作组织未来将重点开展三方面工作',u:'https://www.news.cn/20260719/3ce0afd054bc487d8999c6c3dfdc9d91/c.html',s:'新华网',d:'介绍世界人工智能合作组织的后续工作重点。',g:['大会要闻','治理']},
+    {t:'2026世界人工智能大会｜你好，共创未来的新伙伴',u:'https://www.news.cn/20260719/3528c2059657481db5e8b42c9838867e/c.html',s:'新华网',d:'围绕“智能伙伴 共创未来”呈现大会新产品和新场景。',g:['大会要闻','智能体','产业']},
+    {t:'两岸AI同台，科创融合启新程',u:'https://www.news.cn/20260718/ad437dcf9021482fb2582a838cf7f02d/c.html',s:'新华网',d:'两岸企业集中展示AI芯片、服务器、智能运动、虚拟人等成果。',g:['产业']},
+    {t:'坚持开放共赢 驱动创新发展——全球人工智能治理体系述评之一',u:'https://www.news.cn/20260718/d9c448efbd554437b581645032e43833/c.html',s:'新华网',d:'从开源、产业链合作和数字鸿沟讨论人工智能发展。',g:['治理','产业']},
+    {t:'美国学者：中国为全球人工智能治理贡献重要力量',u:'https://www.news.cn/20260718/4c05d3157c1647f48fceea35c8738866/c.html',s:'新华网',d:'海外学者对人工智能安全监管与国际协作的观点。',g:['治理']},
+    {t:'AI时刻，感受2026世界人工智能大会新浪潮',u:'https://www.news.cn/20260718/e139e6b8bc8f42e5911fdc55a5471329/c.html',s:'新华网',d:'大会技术、产品和产业应用综合速览。',g:['大会要闻','产业']},
+    {t:'让人工智能不断增进全人类福祉、推动人类文明进步',u:'https://www.news.cn/20260718/b39b65b32bf74e89b8bf8f7f04cc4b21/c.html',s:'新华网',d:'新华社评论员文章，聚焦技术发展价值目标。',g:['治理']},
+    {t:'中外嘉宾共议人工智能未来图景',u:'https://www.news.cn/20260717/97796f3c0b7047d5a3c84cc0371e41cd/c.html',s:'新华网',d:'主论坛中科学家、企业家和青年创新力量的核心观点。',g:['大会要闻','产业']},
+    {t:'AI浪潮一线观察：中国智慧赋能全球智变',u:'https://www.news.cn/20260717/cc560a05ccbd458393366411b6e189ce/c.html',s:'新华网',d:'从技术突破、产业落地和全球治理梳理中国AI产业变化。',g:['产业','治理']},
+    {t:'AI医疗迅猛发展，如何优化就医格局',u:'https://www.news.cn/20260715/5671628d0f73403ba5c0ff7b2bc07e72/c.html',s:'新华网',d:'AI辅助诊断、急诊预测等医疗应用及其治理问题。',g:['产业']},
+    {t:'“AI+影视”赛道正热，如何走得更稳更远',u:'https://www.news.cn/politics/20260714/2717ccf1ceb74ed490c8930b89ade243/c.html',s:'新华网',d:'生成式视频、内容生产与文化行业可持续发展。',g:['产业','治理']},
+    {t:'“AI+农业”：如何从“云”上落到“地”里',u:'https://www.news.cn/politics/20260713/a0596bdc43c04d188986b958ae127454/c.html',s:'新华网',d:'机器人、识别和云端数据在农业场景的实际应用。',g:['机器人','产业']},
+    {t:'从“技术可用”到“商业可赚”，AI智能体加速落地',u:'https://www.news.cn/20260710/8cde6a84f0144a99aa578158cc81d094/c.html',s:'新华网',d:'智能体由技术演示向规模化商业落地推进。',g:['智能体','产业']},
+    {t:'对话罗振宇：在WAIC看到“多层世界”，AI会成为每个人的一部分',u:'https://www.news.cn/tech/20260720/2197fdee49884bac872519fec3c979ec/c.html',s:'新华网',d:'从大会现场讨论AI与个人、组织及现实世界的多层关系。',g:['智能体','产业']},
+    {t:'图灵奖获得者：中国将在人工智能领域发挥重要作用',u:'https://www.news.cn/20260717/784d88d405984cf593748fe1cfb5a428/c.html',s:'新华网',d:'国际学者对人工智能研究与中国角色的观点。',g:['大会要闻']},
+    {t:'2026世界人工智能大会：硬核“黑科技”有趣又有料',u:'https://www.news.cn/20260718/01bcd5e648bc4d8d81f079b6bef4f619/c.html',s:'新华网',d:'视频速览大会代表性智能产品与互动体验。',g:['机器人','智能体','影像']},
+    {t:'海外话中国｜中国AI产品助阿根廷患者独立行走',u:'https://www.news.cn/world/20260717/9f73106bf7614636bc8cb1dd8ca62a86/c.html',s:'新华网',d:'外骨骼等智能产品帮助行动障碍患者的应用案例。',g:['机器人','具身智能','产业']},
+    {t:'从世界人工智能大会看国产AI集群化突破',u:'https://www.news.cn/photo/20260719/4a284c6f95584f35b6101afcd8624099/c.html',s:'新华网',d:'以影像呈现国产算力集群和系统级基础设施。',g:['产业','影像']},
+    {t:'在世界人工智能大会看AI赋能千行百业',u:'https://www.news.cn/photo/20260719/83028b0941fe4806aee0fadc798813de/c.html',s:'新华网',d:'农业、工业、医疗、消费等应用场景影像集。',g:['产业','影像']},
+    {t:'2026世界人工智能大会开幕',u:'https://www.news.cn/photo/20260717/817664d5068447a0a5b0c79066026e0d/c.html',s:'新华网',d:'大会开幕现场和展馆影像。',g:['大会要闻','影像']},
+    {t:'镜观中国｜促进人工智能向上向善、造福人类',u:'https://www.news.cn/20260717/51175681d9304996af38ac1795d46a75/c.html',s:'新华网',d:'人工智能技术、产业与民生应用影像专题。',g:['治理','产业','影像']},
+    {t:'2026世界人工智能大会暨人工智能全球治理高级别会议开幕式举行',u:'https://www.news.cn/photo/20260717/17c252aa4121479baa4bbb17d69e13de/c.html',s:'新华网',d:'开幕式现场图片报道。',g:['大会要闻','影像']},
+    {t:'2026世界人工智能大会暨人工智能全球治理高级别会议即将开幕',u:'https://www.news.cn/photo/20260716/45fcf075acaf41da905df4af118c65fd/c.html',s:'新华网',d:'会前场馆准备与城市氛围影像。',g:['大会要闻','影像']},
+    {t:'从训练场走进市民生活：成都人工智能产业观察',u:'https://www.news.cn/photo/20260716/d8dff2b370994bef868baf45c9e86cec/c.html',s:'新华网',d:'人工智能从训练平台走向城市生活与产业场景。',g:['产业','机器人','影像']},
+    {t:'从“机器人大学”到“机器人9N中心”：合肥具身智能产业观察',u:'https://www.news.cn/photo/20260716/6b31bf31bc2f4d7d805c9ac13bffc0fb/c.html',s:'新华网',d:'具身智能人才、实训、产业服务和应用生态。',g:['具身智能','机器人','产业','影像']},
+    {t:'从罕见病诊断到主动式智能体，上海交大在WAIC发布多项成果',u:'https://www.thepaper.cn/newsDetail_forward_33615533',s:'澎湃新闻',d:'上海交大产学研论坛及医疗、主动式智能体等成果。',g:['智能体','产业']},
+    {t:'全国上百支队伍在沪比拼AI临床应用',u:'https://www.thepaper.cn/newsDetail_forward_33616659',s:'澎湃新闻',d:'诊疗方案和病历书写赛道的AI临床应用竞赛。',g:['产业']},
+    {t:'WAIC分论坛聚焦AI赛道比拼：从“大模型”转向“产业落地价值”',u:'https://www.thepaper.cn/newsDetail_forward_33615732',s:'澎湃新闻',d:'青年海归科技对话与产业资源对接，强调落地价值。',g:['产业']},
+    {t:'世界人工智能大会City Walk来了，如何在街头触摸未来',u:'https://www.thepaper.cn/newsDetail_forward_33573575',s:'澎湃新闻',d:'6个区24个AI特色场景和城市体验路线。',g:['产业']},
+    {t:'世界人工智能大会开幕在即，超300款产品将实现全球首发',u:'https://www.thepaper.cn/newsDetail_forward_33560491',s:'澎湃新闻',d:'包含“人·镜·犬”混合智能协同系统等首发产品前瞻。',g:['具身智能','机器人','智能体','产业']},
+    {t:'WAIC 2026前瞻：当AI开始算ROI，WAIC需要回答什么',u:'https://www.thepaper.cn/newsDetail_forward_33597124?commTag=true',s:'澎湃新闻',d:'从投入产出、算电协同和内容经济观察AI商业化。',g:['产业']},
+    {t:'北京亦庄“具身天工”机器人亮相2026世界人工智能大会',u:'https://www.ncsti.gov.cn/kjdt/scyq/bjjjjskfq/jkdt/202607/t20260720_251550.html',s:'国家科技创新中心',d:'“具身天工”人形机器人家族在大会现场的展示。',g:['具身智能','机器人','产业']},
+    {t:'WAIC Academic 2026工作坊总览',u:'https://waica2026.worldaic.com.cn/program/workshops/',s:'WAIC Academic',d:'汇总天基智能计算、量子计算加速、具身智能空间交互等学术工作坊。',g:['大会要闻','世界模型','具身智能']},
+    {t:'具身智能空间交互研讨会征集方向',u:'https://waica2026.worldaic.com.cn/authors/workshop-spatial-interaction-embodied-intelligence.html',s:'WAIC Academic',d:'研究方向涵盖生成式AI、VLA、世界模型、灵巧手实时控制、人形机器人与物理AI。',g:['世界模型','具身智能','机器人','仿真']},
+    {t:'2026 SAIL TOP30项目名单',u:'https://static.worldaic.com.cn/media/20260202/ceb9db7b098346a38341742344171a53.pdf',s:'WAIC官方',d:'含物理AI仿真系统、合成数据驱动具身基座大模型等候选项目。',g:['具身智能','世界模型','仿真','产业']}
+  ];
+  const container=document.querySelector('#articles'),count=document.querySelector('#count'),empty=document.querySelector('#empty'),search=document.querySelector('#search');let active='all';
+  function esc(v){return v.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  function draw(){const q=search.value.trim().toLowerCase();let shown=0;container.innerHTML=items.map(x=>{const blob=(x.t+x.d+x.s+x.g.join(' ')).toLowerCase();const ok=(active==='all'||x.g.includes(active))&&(!q||blob.includes(q));if(ok)shown++;return `<article class="article${ok?'':' hidden'}"><div><a href="${esc(x.u)}" target="_blank" rel="noopener">${esc(x.t)} ↗</a><div class="tags">${x.g.map(g=>`<span class="tag${g==='重点'?' hot':''}">${esc(g)}</span>`).join('')}</div></div><span class="src">${esc(x.s)}</span><p>${esc(x.d)}</p></article>`}).join('');count.textContent=`显示 ${shown} / 共 ${items.length} 条`;empty.style.display=shown?'none':'block'}
+  search.addEventListener('input',draw);document.querySelector('#filters').addEventListener('click',e=>{if(!e.target.matches('.filter'))return;document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));e.target.classList.add('active');active=e.target.dataset.filter;draw()});draw();
+  </script>
+</body>
+</html>
